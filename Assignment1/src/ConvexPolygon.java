@@ -1,2 +1,3 @@
-public class ConvexPolygon {
+public class ConvexPolygon extends SimplePolygon{
+    
 }

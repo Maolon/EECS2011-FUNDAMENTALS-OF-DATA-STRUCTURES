@@ -1,2 +1,3 @@
-public class SimplePolygon {
+public class SimplePolygon implements Polygon{
+
 }
