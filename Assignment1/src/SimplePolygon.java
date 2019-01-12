@@ -2,9 +2,9 @@
  * EECS2011: Fundamentals of Data Structures,  Winter 2019
  * Assignment 1: Polygon Hierarchy
  * Section:  M  or  Z ?
- * Student Name:   ?
- * Student eecs account:  ?
- * Student ID number:  ?
+ * Student Name:  Dongyao He
+ * Student eecs account:  dhe16
+ * Student ID number:  215917610
  **********************************************************/
 package A1;
 
@@ -186,6 +186,13 @@ public class SimplePolygon implements Polygon {
      * @return true if the polygon is simple. Runs in O(n^2) time.
      */
     public boolean isSimple() {
+
+        for(int i=0;i<=n-2;i++){
+            for(int j=i+1;j<=n-1;j++){
+                if(!disjointEdges(i,j)) return false;
+            }
+        }
+
         return true; // TODO: replace this line with your code
     }
 
