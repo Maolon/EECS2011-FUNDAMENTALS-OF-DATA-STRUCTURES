@@ -167,7 +167,17 @@ public class SimplePolygon implements Polygon {
      *             if i or j are outside the index range [0..n-1].
      */
     public boolean disjointEdges(int i, int j) throws IndexOutOfBoundsException {
-        return true; // TODO: replace this line with a try-catch code
+        try{
+            if(i<0 || j<0 || i>=n || j>=n) throw new IndexOutOfBoundsException("Index out of Boundry");
+
+            int iEnd = (i+1)%n;
+            int jEnd = (j+1)%n;
+            return disjointSegments(getVertex(i),getVertex(iEnd),getVertex(j),getVertex(jEnd));
+
+        }catch(Exception e){
+            System.out.println(e.toString());
+            throw new IndexOutOfBoundsException("Index out of Boundry");
+        }
     }
 
     /**
