@@ -35,11 +35,13 @@ public class SimplePolygon implements Polygon {
     protected SimplePolygon(int size) {
         n = size;
         // TODO: place the rest of your code here
+
     }
 
     /** default no-parameter constructor */
     protected SimplePolygon() {
         // TODO: place your code here
+        this(3);
     }
 
     /********* public getters & toString ***************/
@@ -74,7 +76,16 @@ public class SimplePolygon implements Polygon {
      *             if {@code i < 0 || i >= n }.
      */
     public Point2D.Double getVertex(int i) throws IndexOutOfBoundsException {
-        return vertices[i]; // TODO: replace this line with a try-catch code
+
+        try{
+          if(i<0 || i>=n) throw new IndexOutOfBoundsException("Index out of Boundry");
+          return vertices[i];
+
+        }catch(Exception e){
+            System.out.println(e.toString());
+            throw new IndexOutOfBoundsException("Index out of Boundry");
+        }
+
     }
 
     /**
@@ -98,7 +109,10 @@ public class SimplePolygon implements Polygon {
     public static double delta(Point2D.Double a, Point2D.Double b,
                                Point2D.Double c) {
 
-        return (b.x-a.x)*(c.y-a.y)-(c.x-a.x)*(b.y-a.y); // TODO: replace this line with your code
+       // TODO: replace this line with your code
+        double ret = (b.x-a.x)*(c.y-a.y)-(c.x-a.x)*(b.y-a.y);
+        System.out.println(ret);
+        return ret;
     }
 
     /**
@@ -112,10 +126,36 @@ public class SimplePolygon implements Polygon {
      */
     public static boolean disjointSegments(Point2D.Double a, Point2D.Double b,
                                            Point2D.Double c, Point2D.Double d) {
-        if(delta(a,b,c)*delta(a,b,d)>0) return false;
-        if(delta(c,d,a)*delta(c,d,b)>0) return false;
+        double r1 = delta(a,b,c);
+        double r2 = delta(a,b,d);
+        double r3 = delta(c,d,a);
+        double r4 = delta(c,d,b);
+
+        //special case
+        if(r1 == 0.0 && onSegment(a,b,c)) return false;
+        if(r2 == 0.0 && onSegment(a,b,d)) return false;
+        if(r3 == 0.0 && onSegment(c,d,a)) return false;
+        if(r4 == 0.0 && onSegment(c,d,b)) return false;
+        //general case
+        if(r1*r2<0 && r3*r4<0 ) return false;
+
 
         return true; // TODO: replace this line with your code
+    }
+
+    /**
+     * @param a
+     * @param b
+     * @param c
+     *          three Point2D value
+     * @return true if point c on segment a,b false if not
+    * */
+    private static boolean onSegment(Point2D.Double a, Point2D.Double b, Point2D.Double c){
+
+            if(Math.min(a.x,b.x)<=c.x && Math.max(a.x,b.x)>=c.x && Math.min(a.y,b.y)<=c.y && Math.max(a.y,b.y)>=c.y)
+                return true;
+            else
+                return false;
     }
 
     /**
