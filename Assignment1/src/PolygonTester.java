@@ -82,7 +82,13 @@ public class PolygonTester {
 //
 //        System.out.println("colinear disjoint "+sim.disjointSegments(g1,g2,h1,h2));
 
-        sim.getVertex(5);
+        //testDelta
+        Point2D.Double y1 = new Point2D.Double(5,8);
+        Point2D.Double y2 = new Point2D.Double(9,5);
+        Point2D.Double u1 = new Point2D.Double(6,1);
+        sim.delta(y1,y2,u1);
+
+//        sim.getVertex(5);
     }
 
 }

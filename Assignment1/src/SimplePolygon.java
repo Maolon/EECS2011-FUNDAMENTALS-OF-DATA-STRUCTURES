@@ -35,6 +35,7 @@ public class SimplePolygon implements Polygon {
     protected SimplePolygon(int size) {
         n = size;
         // TODO: place the rest of your code here
+        vertices = new Point2D.Double[n];
 
     }
 
@@ -56,6 +57,7 @@ public class SimplePolygon implements Polygon {
         int size = 0; // TODO: replace this line with your code
         SimplePolygon p = new SimplePolygon(size);
         // TODO: populate p.vertices[0..size-1] from input
+
         return p;
     }
 
@@ -187,9 +189,12 @@ public class SimplePolygon implements Polygon {
      */
     public boolean isSimple() {
 
-        for(int i=0;i<=n-2;i++){
-            for(int j=i+1;j<=n-1;j++){
-                if(!disjointEdges(i,j)) return false;
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                if(j-i>1 && j-i<n-1){
+                    if(!disjointEdges(i,j)) return false;
+                }
+
             }
         }
 
@@ -203,7 +208,14 @@ public class SimplePolygon implements Polygon {
      * @return the sum of the edge lengths of the polygon. Runs in O(n) time.
      */
     public double perimeter() {
-        return 0; // TODO: replace this line with your code
+        double sum = 0;
+        for(int i=0;i<n;i++){
+            Point2D.Double p1 = getVertex(i);
+            Point2D.Double p2 = getVertex((i+1)%n);
+            sum +=Math.sqrt(Math.pow((p1.x-p2.x),2)+Math.pow((p1.y-p2.y),2));
+
+        }
+        return sum; // TODO: replace this line with your code
     }
 
     /**
@@ -213,7 +225,20 @@ public class SimplePolygon implements Polygon {
      *             if the polygon is non-simple.
      */
     public double area() throws NonSimplePolygonException {
-        return 0; // TODO: replace this line with a try-catch code
+        double sum = 0;
+        try{
+           if(!isSimple()) throw new NonSimplePolygonException("NonSimplePolygon");
+           for(int i=0;i<n;i++){
+               sum += getVertex(i).x*(getVertex((i+1)%n).y-getVertex((i-1)%n).y);
+           }
+           return 0.5*Math.abs(sum) ;
+
+       }catch(Exception e){
+
+           System.out.println(e.toString());
+           throw new NonSimplePolygonException("NonSimplePolygon");
+       }
+     // return 0; // TODO: replace this line with a try-catch code
     }
 
 
