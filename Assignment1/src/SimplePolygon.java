@@ -9,6 +9,7 @@
 package A1;
 
 import java.awt.geom.Point2D;
+import java.util.*;
 
 /**
  * The class SimplePolygon implements the Polygon interface.
@@ -54,11 +55,49 @@ public class SimplePolygon implements Polygon {
      * @return an unverified simple-polygon instance
      */
     public static SimplePolygon getNewPoly() {
-        int size = 0; // TODO: replace this line with your code
-        SimplePolygon p = new SimplePolygon(size);
-        // TODO: populate p.vertices[0..size-1] from input
+        try{
+            ArrayList<Double> list = readFromUserInput();
+            double size = list.get(0); // TODO: replace this line with your code
+            int j=1;
+            SimplePolygon p = new SimplePolygon((int) size);
+            // TODO: populate p.vertices[0..size-1] from input
+            for(int i=0;i<size;i++){
+                p.vertices[i] = new Point2D.Double();
+                p.vertices[i].x = list.get(j);
+                p.vertices[i].y = list.get(j+1);
+                j=j+2;
+            }
+            return p;
 
-        return p;
+        }catch(IllegalArgumentException e){
+            System.out.println("Illegal num of edges ");
+            return null;
+        }catch(Exception e){
+            System.out.println(e.toString());
+            return null;
+        }
+
+    }
+    /**
+     * read from user input
+     * @return Arraylist of vertex and num of polygons
+     */
+    private static ArrayList<Double> readFromUserInput() throws IllegalArgumentException{
+        ArrayList <Double> list = new ArrayList<>();
+        int num;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please input the num of edges of polygon");
+        num = sc.nextInt();
+        System.out.println("num of edges"+num);
+        if(num < 3) throw new IllegalArgumentException();
+        list.add(Double.valueOf(num));
+        for(int i=0;i<num;i++){
+            System.out.println("please input point"+i+" x " );
+            list.add(sc.nextDouble());
+            System.out.println("please input point"+i+" y " );
+            list.add(sc.nextDouble());
+        }
+        return list;
     }
 
     /**
@@ -67,6 +106,11 @@ public class SimplePolygon implements Polygon {
      */
     public int getSize() {
         return n;
+    }
+
+    //test function remove it
+    public void setVertices(Point2D.Double[] d){
+        vertices = d;
     }
 
     /**
@@ -95,7 +139,11 @@ public class SimplePolygon implements Polygon {
      */
     @Override
     public String toString() {
-        return "xxx"; // TODO: replace this line with your code
+        String str = "Num of Edge " + String.valueOf(n);
+        for(int i=0;i<vertices.length;i++){
+            str += " | point"+i+" x "+vertices[i].x+","+"y "+vertices[i].y+" | ";
+        }
+        return str; // TODO: replace this line with your code
     }
 
     /************** utilities *********************/
@@ -113,7 +161,7 @@ public class SimplePolygon implements Polygon {
 
        // TODO: replace this line with your code
         double ret = (b.x-a.x)*(c.y-a.y)-(c.x-a.x)*(b.y-a.y);
-        System.out.println(ret);
+        //System.out.println(ret);
         return ret;
     }
 
@@ -192,6 +240,7 @@ public class SimplePolygon implements Polygon {
         for(int i=0;i<n;i++){
             for(int j=i+1;j<n;j++){
                 if(j-i>1 && j-i<n-1){
+                    System.out.println("i "+i+" j "+j+" "+disjointEdges(i,j));
                     if(!disjointEdges(i,j)) return false;
                 }
 
@@ -226,10 +275,13 @@ public class SimplePolygon implements Polygon {
      */
     public double area() throws NonSimplePolygonException {
         double sum = 0;
+
         try{
            if(!isSimple()) throw new NonSimplePolygonException("NonSimplePolygon");
+           int j = n-1;
            for(int i=0;i<n;i++){
-               sum += getVertex(i).x*(getVertex((i+1)%n).y-getVertex((i-1)%n).y);
+               sum += (getVertex(j).x + getVertex(i).x) * (getVertex(j).y - getVertex(i).y);
+               j = i;
            }
            return 0.5*Math.abs(sum) ;
 
