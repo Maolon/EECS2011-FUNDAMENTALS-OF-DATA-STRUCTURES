@@ -12,9 +12,9 @@ import java.awt.geom.Point2D;
 
 /**
  * PolygonTester should enable a thorough testing of the polygon hierarchy.
- *
+ * <p>
  * It should provide an easy to read input-output recording of the test cases.
- *
+ * <p>
  * The student should also submit these recorded test results in TestIO.txt file as part
  * of Assignment1.
  *
@@ -28,7 +28,7 @@ public class PolygonTester {
         /**
          * read from user keyboard input and suppose user will input 7 different polygons
          * */
-        for(int i=0;i<7;i++){
+        for (int i = 0; i < 7; i++) {
             runTest(i);
         }
 
@@ -102,7 +102,7 @@ public class PolygonTester {
 //       System.out.println(sim1.toString());
 //       System.out.println(sim1.isSimple());
 
-       //test of a simple polygon with 4 edges
+        //test of a simple polygon with 4 edges
 //       SimplePolygon sim2 = new SimplePolygon(4);
 //       double arr1[] = {8.9,21.8,29.1,8.8,39.2,20.3,28,25};
 //
@@ -235,45 +235,40 @@ public class PolygonTester {
 //        System.out.println("is convex:"+sim7c.isConvex());
 
 
-
-
-
-
     }
 
 
-    public static void runTest(int i){
-        System.out.println("====Test of Polygon"+(i+1)+"====");
+    public static void runTest(int i) {
+        System.out.println("====Test of Polygon" + (i + 1) + "====");
         SimplePolygon sim = SimplePolygon.getNewPoly();
         System.out.println(sim.toString());
-        System.out.println("is simple: " +sim.isSimple());
-        System.out.println("perimeter: " +sim.perimeter());
-        try{
-            System.out.println("area: "+sim.area());
-        }catch (Exception e){
+        System.out.println("is simple: " + sim.isSimple());
+        System.out.println("perimeter: " + sim.perimeter());
+        try {
+            System.out.println("area: " + sim.area());
+        } catch (Exception e) {
             System.out.println(e.toString());
         }
         //test of the same polygon whether convex
         System.out.println();
         System.out.println("input the same polygon again for testing convex");
         ConvexPolygon simc = ConvexPolygon.getNewPoly();
-        System.out.println("is convex:"+simc.isConvex());
-        System.out.println("=====End OF TEST Polygon"+(i+1)+"====");
+        System.out.println("is convex:" + simc.isConvex());
+
+        System.out.println("=====End OF TEST Polygon" + (i + 1) + "====");
         System.out.println();
 
     }
 
 
-
-
-    public static Point2D.Double[] convertArrToPoint2D (double list[],int size){
+    public static Point2D.Double[] convertArrToPoint2D(double list[], int size) {
         Point2D.Double[] p = new Point2D.Double[size];
-        int j=0;
-        for(int i=0;i<size;i++){
+        int j = 0;
+        for (int i = 0; i < size; i++) {
             p[i] = new Point2D.Double();
             p[i].x = list[j];
-            p[i].y = list[j+1];
-            j=j+2;
+            p[i].y = list[j + 1];
+            j = j + 2;
         }
         return p;
     }

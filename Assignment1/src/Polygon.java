@@ -21,31 +21,24 @@ import java.awt.geom.Point2D;
 public interface Polygon {
 
     /**
-     *
      * @return the number of edges (equivalently, vertices) of the polygon.
      */
     int getSize();
 
     /**
-     *
-     *
      * @return the i-th vertex of the polygon.
-     * @throws IndexOutOfBoundsException
-     *             if {@code 0 > i || i >= sides() }
+     * @throws IndexOutOfBoundsException if {@code 0 > i || i >= sides() }
      */
     Point2D.Double getVertex(int i) throws IndexOutOfBoundsException;
 
     /**
-     *
      * @return the sum of the edge lengths of the polygon.
      */
     double perimeter();
 
     /**
-     *
      * @return area of the polygon interior.
-     * @throws NonSimplePolygonException
-     *             if the polygon is non-simple
+     * @throws NonSimplePolygonException if the polygon is non-simple
      */
     double area() throws NonSimplePolygonException;
 }

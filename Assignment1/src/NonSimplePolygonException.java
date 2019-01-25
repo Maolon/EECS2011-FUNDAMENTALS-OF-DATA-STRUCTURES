@@ -21,11 +21,16 @@ public class NonSimplePolygonException extends Exception {
      */
     private static final long serialVersionUID = -6499398129928918406L;
 
-    /** no-message constructor */
+    /**
+     * no-message constructor
+     */
     public NonSimplePolygonException() {
     }
 
-    /** detailed message constructor */
+    /**
+     * detailed message constructor
+     */
     public NonSimplePolygonException(String msg) {
-        super(msg); }
+        super(msg);
+    }
 }
