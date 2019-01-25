@@ -1,0 +1,695 @@
+// Poly1 {4,8.9,21.8,29.1,8.8,39.2,20.3,28,25} simple and convex
+====test of polygon1====
+Please input the num of edges of polygon
+4
+num of edges4
+please input point0 x
+8.9
+please input point0 y
+21.8
+please input point1 x
+29.1
+please input point1 y
+8.8
+please input point2 x
+39.2
+please input point2 y
+20.3
+please input point3 x
+28
+please input point3 y
+25
+Num of Edge 4 | point0 x：8.9 , y：21.8 |  | point1 x：29.1 , y：8.8 |  | point2 x：39.2 , y：20.3 |  | point3 x：28.0 , y：25.0 |
+is simple: true
+perimeter: 70.83961194428784
+area: 244.6050000000001
+
+input the same polygon again for testing convex
+Please input the num of edges of polygon
+4
+num of edges4
+please input point0 x
+8.9
+please input point0 y
+21.8
+please input point1 x
+29.1
+please input point1 y
+8.8
+please input point2 x
+39.2
+please input point2 y
+20.3
+please input point3 x
+28
+please input point3 y
+25
+is convex:true
+=====End OF TEST Polygon1====
+
+// Poly2 {7,28,2,31,5,28,10,14,14,5,10,8,4,18,1} simple and convex
+====Test of Polygon2====
+Please input the num of edges of polygon
+7
+num of edges7
+please input point0 x
+28
+please input point0 y
+2
+please input point1 x
+31
+please input point1 y
+5
+please input point2 x
+28
+please input point2 y
+10
+please input point3 x
+14
+please input point3 y
+14
+please input point4 x
+5
+please input point4 y
+10
+please input point5 x
+8
+please input point5 y
+4
+please input point6 x
+18
+please input point6 y
+1
+Num of Edge 7 | point0 x：28.0 , y：2.0 |  | point1 x：31.0 , y：5.0 |  | point2 x：28.0 , y：10.0 |  | point3 x：14.0 , y：14.0 |  | point4 x：5.0 , y：10.0 |  | point5 x：8.0 , y：4.0 |  | point6 x：18.0 , y：1.0 |
+is simple: true
+perimeter: 61.68105622485254
+area: 227.0
+
+input the same polygon again for testing convex
+Please input the num of edges of polygon
+7
+num of edges7
+please input point0 x
+28
+please input point0 y
+2
+please input point1 x
+31
+please input point1 y
+5
+please input point2 x
+28
+please input point2 y
+10
+please input point3 x
+14
+please input point3 y
+14
+please input point4 x
+5
+please input point4 y
+10
+please input point5 x
+8
+please input point5 y
+4
+please input point6 x
+18
+please input point6 y
+1
+is convex:true
+=====End OF TEST Polygon2====
+
+// Poly3 {9,6,10,20,3,23,3,23,8,27,3,30,3,20,15,16,5,20,14} none simple
+====Test of Polygon3====
+Please input the num of edges of polygon
+9
+num of edges9
+please input point0 x
+6
+please input point0 y
+10
+please input point1 x
+20
+please input point1 y
+3
+please input point2 x
+23
+please input point2 y
+3
+please input point3 x
+23
+please input point3 y
+8
+please input point4 x
+27
+please input point4 y
+3
+please input point5 x
+30
+please input point5 y
+3
+please input point6 x
+20
+please input point6 y
+15
+please input point7 x
+16
+please input point7 y
+5
+please input point8 x
+20
+please input point8 y
+14
+Num of Edge 9 | point0 x：6.0 , y：10.0 |  | point1 x：20.0 , y：3.0 |  | point2 x：23.0 , y：3.0 |  | point3 x：23.0 , y：8.0 |  | point4 x：27.0 , y：3.0 |  | point5 x：30.0 , y：3.0 |  | point6 x：20.0 , y：15.0 |  | point7 x：16.0 , y：5.0 |  | point8 x：20.0 , y：14.0 |
+is simple: false
+perimeter: 83.85550662637084
+A1.NonSimplePolygonException: NonSimplePolygon
+
+input the same polygon again for testing convex
+Please input the num of edges of polygon
+9
+num of edges9
+please input point0 x
+6
+please input point0 y
+10
+please input point1 x
+20
+please input point1 y
+3
+please input point2 x
+23
+please input point2 y
+3
+please input point3 x
+23
+please input point3 y
+8
+please input point4 x
+27
+please input point4 y
+3
+please input point5 x
+30
+please input point5 y
+3
+please input point6 x
+20
+please input point6 y
+15
+please input point7 x
+16
+please input point7 y
+5
+please input point8 x
+20
+please input point8 y
+14
+is convex:false
+=====End OF TEST Polygon3====
+
+// Poly4 {13,5,6,13,2,12,6,20,2,16,12,17,11,19,5,13,11,19,15,8,12,14,7,5,11,9,6} none simple
+====Test of Polygon4====
+Please input the num of edges of polygon
+13
+num of edges13
+please input point0 x
+5
+please input point0 y
+6
+please input point1 x
+13
+please input point1 y
+2
+please input point2 x
+12
+please input point2 y
+6
+please input point3 x
+20
+please input point3 y
+2
+please input point4 x
+16
+please input point4 y
+12
+please input point5 x
+17
+please input point5 y
+11
+please input point6 x
+19
+please input point6 y
+5
+please input point7 x
+13
+please input point7 y
+11
+please input point8 x
+19
+please input point8 y
+15
+please input point9 x
+8
+please input point9 y
+12
+please input point10 x
+14
+please input point10 y
+7
+please input point11 x
+5
+please input point11 y
+11
+please input point12 x
+9
+please input point12 y
+6
+Num of Edge 13 | point0 x：5.0 , y：6.0 |  | point1 x：13.0 , y：2.0 |  | point2 x：12.0 , y：6.0 |  | point3 x：20.0 , y：2.0 |  | point4 x：16.0 , y：12.0 |  | point5 x：17.0 , y：11.0 |  | point6 x：19.0 , y：5.0 |  | point7 x：13.0 , y：11.0 |  | point8 x：19.0 , y：15.0 |  | point9 x：8.0 , y：12.0 |  | point10 x：14.0 , y：7.0 |  | point11 x：5.0 , y：11.0 |  | point12 x：9.0 , y：6.0 |
+is simple: false
+perimeter: 95.68111783388835
+A1.NonSimplePolygonException: NonSimplePolygon
+
+input the same polygon again for testing convex
+Please input the num of edges of polygon
+13
+num of edges13
+please input point0 x
+5
+please input point0 y
+6
+please input point1 x
+13
+please input point1 y
+2
+please input point2 x
+12
+please input point2 y
+6
+please input point3 x
+20
+please input point3 y
+2
+please input point4 x
+16
+please input point4 y
+12
+please input point5 x
+17
+please input point5 y
+11
+please input point6 x
+19
+please input point6 y
+5
+please input point7 x
+13
+please input point7 y
+11
+please input point8 x
+19
+please input point8 y
+15
+please input point9 x
+8
+please input point9 y
+12
+please input point10 x
+14
+please input point10 y
+7
+please input point11 x
+5
+please input point11 y
+11
+please input point12 x
+9
+please input point12 y
+6
+is convex:false
+=====End OF TEST Polygon4====
+
+// Poly5 {13,5,6,13,2,12,6,20,2,18,12,17,11,19,5,13,11,19,15,8,12,14,7,5,11,9,6} simple and none convex
+====Test of Polygon5====
+Please input the num of edges of polygon
+13
+num of edges13
+please input point0 x
+5
+please input point0 y
+6
+please input point1 x
+13
+please input point1 y
+2
+please input point2 x
+12
+please input point2 y
+6
+please input point3 x
+20
+please input point3 y
+2
+please input point4 x
+18
+please input point4 y
+12
+please input point5 x
+17
+please input point5 y
+11
+please input point6 x
+19
+please input point6 y
+5
+please input point7 x
+13
+please input point7 y
+11
+please input point8 x
+19
+please input point8 y
+15
+please input point9 x
+8
+please input point9 y
+12
+please input point10 x
+14
+please input point10 y
+7
+please input point11 x
+5
+please input point11 y
+11
+please input point12 x
+9
+please input point12 y
+6
+Num of Edge 13 | point0 x：5.0 , y：6.0 |  | point1 x：13.0 , y：2.0 |  | point2 x：12.0 , y：6.0 |  | point3 x：20.0 , y：2.0 |  | point4 x：18.0 , y：12.0 |  | point5 x：17.0 , y：11.0 |  | point6 x：19.0 , y：5.0 |  | point7 x：13.0 , y：11.0 |  | point8 x：19.0 , y：15.0 |  | point9 x：8.0 , y：12.0 |  | point10 x：14.0 , y：7.0 |  | point11 x：5.0 , y：11.0 |  | point12 x：9.0 , y：6.0 |
+is simple: true
+perimeter: 95.1088272468049
+area: 82.0
+
+input the same polygon again for testing convex
+Please input the num of edges of polygon
+13
+num of edges13
+please input point0 x
+5
+please input point0 y
+6
+please input point1 x
+13
+please input point1 y
+2
+please input point2 x
+12
+please input point2 y
+6
+please input point3 x
+20
+please input point3 y
+2
+please input point4 x
+18
+please input point4 y
+12
+please input point5 x
+17
+please input point5 y
+11
+please input point6 x
+19
+please input point6 y
+5
+please input point7 x
+13
+please input point7 y
+11
+please input point8 x
+19
+please input point8 y
+15
+please input point9 x
+8
+please input point9 y
+12
+please input point10 x
+14
+please input point10 y
+7
+please input point11 x
+5
+please input point11 y
+11
+please input point12 x
+9
+please input point12 y
+6
+is convex:false
+=====End OF TEST Polygon5====
+
+
+// Poly6 {22,14,7,15,8,17,7,17,5,15,6,14,4,12,6,11,9,15,11,7,12,8,11,7,9,10,11,8,6,10,5,11,3,16,3,18,4,19,8,16,9,14,9,13,8} simple and none convex
+====Test of Polygon6====
+Please input the num of edges of polygon
+22
+num of edges22
+please input point0 x
+14
+please input point0 y
+7
+please input point1 x
+15
+please input point1 y
+8
+please input point2 x
+17
+please input point2 y
+7
+please input point3 x
+17
+please input point3 y
+5
+please input point4 x
+15
+please input point4 y
+6
+please input point5 x
+14
+please input point5 y
+4
+please input point6 x
+12
+please input point6 y
+6
+please input point7 x
+11
+please input point7 y
+9
+please input point8 x
+15
+please input point8 y
+11
+please input point9 x
+7
+please input point9 y
+12
+please input point10 x
+8
+please input point10 y
+11
+please input point11 x
+7
+please input point11 y
+9
+please input point12 x
+10
+please input point12 y
+11
+please input point13 x
+8
+please input point13 y
+6
+please input point14 x
+10
+please input point14 y
+5
+please input point15 x
+11
+please input point15 y
+3
+please input point16 x
+16
+please input point16 y
+3
+please input point17 x
+18
+please input point17 y
+4
+please input point18 x
+19
+please input point18 y
+8
+please input point19 x
+16
+please input point19 y
+9
+please input point20 x
+14
+please input point20 y
+9
+please input point21 x
+13
+please input point21 y
+8
+Num of Edge 22 | point0 x：14.0 , y：7.0 |  | point1 x：15.0 , y：8.0 |  | point2 x：17.0 , y：7.0 |  | point3 x：17.0 , y：5.0 |  | point4 x：15.0 , y：6.0 |  | point5 x：14.0 , y：4.0 |  | point6 x：12.0 , y：6.0 |  | point7 x：11.0 , y：9.0 |  | point8 x：15.0 , y：11.0 |  | point9 x：7.0 , y：12.0 |  | point10 x：8.0 , y：11.0 |  | point11 x：7.0 , y：9.0 |  | point12 x：10.0 , y：11.0 |  | point13 x：8.0 , y：6.0 |  | point14 x：10.0 , y：5.0 |  | point15 x：11.0 , y：3.0 |  | point16 x：16.0 , y：3.0 |  | point17 x：18.0 , y：4.0 |  | point18 x：19.0 , y：8.0 |  | point19 x：16.0 , y：9.0 |  | point20 x：14.0 , y：9.0 |  | point21 x：13.0 , y：8.0 |
+is simple: true
+perimeter: 65.11052794858813
+area: 50.0
+
+input the same polygon again for testing convex
+Please input the num of edges of polygon
+22
+num of edges22
+please input point0 x
+14
+please input point0 y
+7
+please input point1 x
+15
+please input point1 y
+8
+please input point2 x
+17
+please input point2 y
+7
+please input point3 x
+17
+please input point3 y
+5
+please input point4 x
+15
+please input point4 y
+6
+please input point5 x
+14
+please input point5 y
+4
+please input point6 x
+12
+please input point6 y
+6
+please input point7 x
+11
+please input point7 y
+9
+please input point8 x
+15
+please input point8 y
+11
+please input point9 x
+7
+please input point9 y
+12
+please input point10 x
+8
+please input point10 y
+11
+please input point11 x
+7
+please input point11 y
+9
+please input point12 x
+10
+please input point12 y
+11
+please input point13 x
+8
+please input point13 y
+6
+please input point14 x
+10
+please input point14 y
+5
+please input point15 x
+11
+please input point15 y
+3
+please input point16 x
+16
+please input point16 y
+3
+please input point17 x
+18
+please input point17 y
+4
+please input point18 x
+19
+please input point18 y
+8
+please input point19 x
+16
+please input point19 y
+9
+please input point20 x
+14
+please input point20 y
+9
+please input point21 x
+13
+please input point21 y
+8
+is convex:false
+=====End OF TEST Polygon6====
+
+// Poly7 {4,6,1,9,5,5,8,2,4} simple and convex
+====Test of Polygon7====
+Please input the num of edges of polygon
+4
+num of edges4
+please input point0 x
+6
+please input point0 y
+1
+please input point1 x
+9
+please input point1 y
+5
+please input point2 x
+5
+please input point2 y
+8
+please input point3 x
+2
+please input point3 y
+4
+Num of Edge 4 | point0 x：6.0 , y：1.0 |  | point1 x：9.0 , y：5.0 |  | point2 x：5.0 , y：8.0 |  | point3 x：2.0 , y：4.0 |
+is simple: true
+perimeter: 20.0
+area: 25.0
+
+input the same polygon again for testing convex
+Please input the num of edges of polygon
+4
+num of edges4
+please input point0 x
+6
+please input point0 y
+1
+please input point1 x
+9
+please input point1 y
+5
+please input point2 x
+5
+please input point2 y
+8
+please input point3 x
+2
+please input point3 y
+4
+is convex:true
+=====End OF TEST Polygon7====

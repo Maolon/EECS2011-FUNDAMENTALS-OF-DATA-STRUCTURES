@@ -1,7 +1,7 @@
 /**********************************************************
  * EECS2011: Fundamentals of Data Structures,  Winter 2019
  * Assignment 1: Polygon Hierarchy
- * Section:  M  or  Z ?
+ * Section:  M  
  * Student Name:  Dongyao He
  * Student eecs account:  dhe16
  * Student ID number:  215917610
@@ -79,10 +79,11 @@ public class SimplePolygon implements Polygon {
 
     }
     /**
-     * read from user input
+     * read from user keyboard input
+     * @throws IllegalArgumentException
      * @return Arraylist of vertex and num of polygons
      */
-    private static ArrayList<Double> readFromUserInput() throws IllegalArgumentException{
+    protected static ArrayList<Double> readFromUserInput() throws IllegalArgumentException{
         ArrayList <Double> list = new ArrayList<>();
         int num;
         Scanner sc = new Scanner(System.in);
@@ -109,9 +110,9 @@ public class SimplePolygon implements Polygon {
     }
 
     //test function remove it
-    public void setVertices(Point2D.Double[] d){
-        vertices = d;
-    }
+//    public void setVertices(Point2D.Double[] d){
+//        vertices = d;
+//    }
 
     /**
      *
@@ -128,7 +129,7 @@ public class SimplePolygon implements Polygon {
           return vertices[i];
 
         }catch(Exception e){
-            System.out.println(e.toString());
+            //System.out.println(e.toString());
             throw new IndexOutOfBoundsException("Index out of Boundry");
         }
 
@@ -139,9 +140,9 @@ public class SimplePolygon implements Polygon {
      */
     @Override
     public String toString() {
-        String str = "Num of Edge " + String.valueOf(n);
+        String str = "Num of Edge " + String.valueOf(getSize());
         for(int i=0;i<vertices.length;i++){
-            str += " | point"+i+" x "+vertices[i].x+","+"y "+vertices[i].y+" | ";
+            str += " | point"+i+" x："+vertices[i].x+" , "+"y："+vertices[i].y+" | ";
         }
         return str; // TODO: replace this line with your code
     }
@@ -225,7 +226,7 @@ public class SimplePolygon implements Polygon {
             return disjointSegments(getVertex(i),getVertex(iEnd),getVertex(j),getVertex(jEnd));
 
         }catch(Exception e){
-            System.out.println(e.toString());
+            //System.out.println(e.toString());
             throw new IndexOutOfBoundsException("Index out of Boundry");
         }
     }
@@ -240,7 +241,7 @@ public class SimplePolygon implements Polygon {
         for(int i=0;i<n;i++){
             for(int j=i+1;j<n;j++){
                 if(j-i>1 && j-i<n-1){
-                    System.out.println("i "+i+" j "+j+" "+disjointEdges(i,j));
+                    //System.out.println("i "+i+" j "+j+" "+disjointEdges(i,j));
                     if(!disjointEdges(i,j)) return false;
                 }
 
@@ -261,7 +262,7 @@ public class SimplePolygon implements Polygon {
         for(int i=0;i<n;i++){
             Point2D.Double p1 = getVertex(i);
             Point2D.Double p2 = getVertex((i+1)%n);
-            sum +=Math.sqrt(Math.pow((p1.x-p2.x),2)+Math.pow((p1.y-p2.y),2));
+            sum += Math.sqrt(Math.pow((p1.x-p2.x),2)+Math.pow((p1.y-p2.y),2));
 
         }
         return sum; // TODO: replace this line with your code
@@ -287,7 +288,7 @@ public class SimplePolygon implements Polygon {
 
        }catch(Exception e){
 
-           System.out.println(e.toString());
+           //System.out.println(e.toString());
            throw new NonSimplePolygonException("NonSimplePolygon");
        }
      // return 0; // TODO: replace this line with a try-catch code

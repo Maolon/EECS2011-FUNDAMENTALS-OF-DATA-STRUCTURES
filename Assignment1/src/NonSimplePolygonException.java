@@ -1,10 +1,10 @@
 /**********************************************************
  * EECS2011: Fundamentals of Data Structures,  Winter 2019
  * Assignment 1: Polygon Hierarchy
- * Section:  M  or  Z ?
- * Student Name:   ?
- * Student eecs account:  ?
- * Student ID number:  ? 
+ * Section:  M
+ * Student Name:  Dongyao He
+ * Student eecs account:  dhe16
+ * Student ID number:  215917610
  **********************************************************/
 package A1;
 
