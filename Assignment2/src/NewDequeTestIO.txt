@@ -1,0 +1,20 @@
+addLast(5)
+addFirst(3)
+addFirst(7)
+first() return: 7
+removeLast() return: 5
+size() return: 2
+removeLast() return: 3
+removeFirst() return: 7
+size() return: 0
+isEmpty()return: true
+removeLast() return: null
+removeFirst() return: null
+first() return: null
+last() return: null
+addFirst(7)
+last() return: 6
+addFirst(8)
+size() return: 2
+isEmpty()return: false
+last() return: 6

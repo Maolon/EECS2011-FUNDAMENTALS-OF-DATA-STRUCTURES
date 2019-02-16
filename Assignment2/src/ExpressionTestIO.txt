@@ -1,0 +1,45 @@
+Input  RPIE: a+b
+java.lang.IllegalArgumentException: Input is not a valid RPIE.
+
+Input  RPIE: a+b)
+Output FPIE: (a + b)
+Output UPPE: a b +
+
+Input  RPIE: a+b)*c+d)
+java.lang.IllegalArgumentException: Input is not a valid RPIE.
+
+Input  RPIE: a+b)*c+d))
+Output FPIE: ((a + b) * (c + d))
+Output UPPE: a b +  c d +  *
+
+Input  RPIE: a +b)* c+ d))
+Output FPIE: ((a + b) * (c + d))
+Output UPPE: a b +  c d +  *
+
+Input  RPIE: 5-7)*15*32)/3+5)))*8-3))
+Output FPIE: (((5 - 7) * ((15 * 32) / (3 + 5))) * (8 - 3))
+Output UPPE: 5 7 -  15 32 *  3 5 +  /  *  8 3 -  *
+
+Input  RPIE: 5 + 734) / 4 + 9 +2))
+java.lang.IllegalArgumentException: Input is not a valid RPIE.
+
+Input  RPIE: 5 + 7) / 4 + 9))
+Output FPIE: ((5 + 7) / (4 + 9))
+Output UPPE: 5 7 +  4 9 +  /
+
+Input  RPIE: 5 - 7) * 4 * 15 * 32)
+java.lang.IllegalArgumentException: Input is not a valid RPIE.
+
+Input  RPIE: 5 + ^%&&$$%@) / 40.532+ &&@&%))
+Output FPIE: ((5 + ^%&&$$%@) / (40.532 + &&@&%))
+Output UPPE: 5 ^%&&$$%@ +  40.532 &&@&% +  /
+
+Input  RPIE: a+20)/(b-c)*53.4-d
+java.lang.IllegalArgumentException: Input is not a valid RPIE.
+
+Input  RPIE: (A + B) * (C + D)
+java.lang.IllegalArgumentException: Input is not a valid RPIE.
+Input your valid RPIE:
+
+
+
